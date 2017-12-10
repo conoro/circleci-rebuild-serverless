@@ -1,7 +1,7 @@
 {
   "name": "circleci-rebuild-serverless",
   "description":
-    "A Serverless AWS Lambda function that runs once per day and rebuilds a CircleCI Build",
+    "A Serverless AWS Lambda function that runs once per day and rebuilds a set of CircleCI projects",
   "version": "1.0.0",
   "author": {
     "name": "Conor O'Neill",

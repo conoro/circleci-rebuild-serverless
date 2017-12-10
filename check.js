@@ -37,10 +37,10 @@ module.exports.check = (event, context, callback) => {
       },
       function(error, response, body) {
         if (response.statusCode >= 400 && response.statusCode <= 550) {
-          console.log("error:", error); // Print the error if one occurred
+          console.log("error:", error);
           gerr = error;
         } else {
-          console.log("statusCode:", response && response.statusCode); // Print the response status code if a response was received
+          console.log("statusCode:", response && response.statusCode);
           console.log("body:", body);
         }
         // If this is the last request to CircleCI then complete callback to Lambda
