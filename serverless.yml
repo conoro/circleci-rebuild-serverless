@@ -1,0 +1,28 @@
+service: circleci-rebuild-serverless
+
+frameworkVersion: ">=1.1.0 <2.0.0"
+
+custom:
+      
+provider:
+  name: aws
+  runtime: nodejs6.10
+  environment:
+    CIRCLECI_REBUILD_ACCESS_TOKEN: ${file(./serverless.env.yml):dev.CIRCLECI_REBUILD_ACCESS_TOKEN}
+    CIRCLECI_REBUILD_SCM: ${file(./serverless.env.yml):dev.CIRCLECI_REBUILD_SCM}
+    CIRCLECI_REBUILD_USER: ${file(./serverless.env.yml):dev.CIRCLECI_REBUILD_USER}
+    CIRCLECI_REBUILD_PROJECTS: ${file(./serverless.env.yml):dev.CIRCLECI_REBUILD_PROJECTS}
+functions:
+  check:
+    handler: check.check
+    events:
+      - http:
+          path: rebuild
+          method: get
+          cors: true
+  cron:
+    handler: check.check
+    events:
+      # Invoke Lambda function every day
+      # See syntax here http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html
+      - schedule: rate(1 day)

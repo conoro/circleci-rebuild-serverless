@@ -1,0 +1,20 @@
+{
+  "name": "circleci-rebuild-serverless",
+  "description":
+    "A Serverless AWS Lambda function that runs once per day and rebuilds a CircleCI Build",
+  "version": "1.0.0",
+  "author": {
+    "name": "Conor O'Neill",
+    "email": "conor@conoroneill.com",
+    "url": "https://github.com/conoro"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/conoro/circleci-rebuild-serverless.git"
+  },
+  "keywords": ["circleci", "build", "serverless"],
+  "license": "Apache-2.0",
+  "dependencies": {
+    "request": "^2.83.0"
+  }
+}
