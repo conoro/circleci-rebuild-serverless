@@ -8,6 +8,10 @@
     "email": "conor@conoroneill.com",
     "url": "https://github.com/conoro"
   },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile": "./node_modules/.bin/babel check-source.js > check.js"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/conoro/circleci-rebuild-serverless.git"
@@ -15,6 +19,11 @@
   "keywords": ["circleci", "build", "serverless"],
   "license": "Apache-2.0",
   "dependencies": {
-    "request": "^2.83.0"
+    "axios": "^0.17.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.0.0-beta.37",
+    "@babel/core": "^7.0.0-beta.37",
+    "@babel/preset-env": "^7.0.0-beta.37"
   }
 }

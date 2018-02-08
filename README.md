@@ -22,6 +22,7 @@ npm install
 4. Then run:
 
 ```
+npm run compile
 serverless deploy
 ```
 
@@ -48,6 +49,13 @@ serverless logs -f cron
 serverless deploy function -f check
 ```
 
+4. You can run it locally with
+
+```bash
+serverless invoke local --function check
+```
+
+5. It's using Babel to enable the use of async/await on Node 6 on Lambda. This will be removed when Node 8 is released on Lambda.
 LICENSE Apache-2.0
 
 Copyright Conor O'Neill 2017, conor@conoroneill.com
