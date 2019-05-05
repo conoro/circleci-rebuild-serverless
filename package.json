@@ -1,7 +1,6 @@
 {
   "name": "circleci-rebuild-serverless",
-  "description":
-    "A Serverless AWS Lambda function that runs once per day and rebuilds a set of CircleCI projects",
+  "description": "A Serverless AWS Lambda function that runs once per day and rebuilds a set of CircleCI projects",
   "version": "1.0.0",
   "author": {
     "name": "Conor O'Neill",
@@ -10,20 +9,28 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "compile": "./node_modules/.bin/babel check-source.js > check.js"
+    "compile": "./node_modules/.bin/babel check-source.js > check.js",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/conoro/circleci-rebuild-serverless.git"
   },
-  "keywords": ["circleci", "build", "serverless"],
+  "keywords": [
+    "circleci",
+    "build",
+    "serverless"
+  ],
   "license": "Apache-2.0",
   "dependencies": {
-    "axios": "^0.17.1"
+    "axios": "^0.17.1",
+    "snyk": "^1.161.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.0.0-beta.37",
     "@babel/core": "^7.0.0-beta.37",
     "@babel/preset-env": "^7.0.0-beta.37"
-  }
+  },
+  "snyk": true
 }
