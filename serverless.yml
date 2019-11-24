@@ -6,7 +6,7 @@ custom:
       
 provider:
   name: aws
-  runtime: nodejs10.x
+  runtime: nodejs12.x
   environment:
     CIRCLECI_REBUILD_ACCESS_TOKEN: ${file(./serverless.env.yml):dev.CIRCLECI_REBUILD_ACCESS_TOKEN}
     CIRCLECI_REBUILD_SCM: ${file(./serverless.env.yml):dev.CIRCLECI_REBUILD_SCM}
