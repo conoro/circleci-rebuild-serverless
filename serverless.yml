@@ -1,12 +1,12 @@
 service: circleci-rebuild-serverless
 
-frameworkVersion: ">=1.1.0 <2.0.0"
+frameworkVersion: ">=2.24.0"
 
 custom:
       
 provider:
   name: aws
-  runtime: nodejs12.x
+  runtime: nodejs16.x
   environment:
     CIRCLECI_REBUILD_ACCESS_TOKEN: ${file(./serverless.env.yml):dev.CIRCLECI_REBUILD_ACCESS_TOKEN}
     CIRCLECI_REBUILD_SCM: ${file(./serverless.env.yml):dev.CIRCLECI_REBUILD_SCM}
